@@ -16,6 +16,7 @@ alias i "sudo apt install"
 alias diff "diff --color --side-by-side"
 alias bat batcat
 alias s "python3 -i ~/scripts/python_scratchpad.py"
+alias gitdiff "ydiff -s -w0"
 alias p instantiate_project
 function instantiate_project
    ~/Templates/instantiate_project $argv[1..-1] && cd $argv[2]
