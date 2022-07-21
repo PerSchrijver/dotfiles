@@ -1,5 +1,6 @@
 " Vim RC
-set exrc
+
+set nocompatible
 set guicursor=
 set relativenumber
 set nu
@@ -8,6 +9,7 @@ set belloff=all
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set formatoptions-=cro
 
 set mouse+=a
 
