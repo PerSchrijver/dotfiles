@@ -41,6 +41,7 @@ Plug 'justinmk/vim-sneak' " Sneak adds fast movement
 Plug 'tpope/vim-commentary' " Comment lines
 Plug 'ahmedkhalf/project.nvim'
 Plug 'preservim/nerdcommenter'
+Plug 'sheerun/vim-polyglot'
 
 " Media files telescope
 Plug 'nvim-lua/popup.nvim'
