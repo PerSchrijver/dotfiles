@@ -18,6 +18,16 @@ alias bat batcat
 alias s "python3 -i ~/scripts/python_scratchpad.py"
 alias gitdiff "ydiff -s -w0"
 alias p instantiate_project
+alias git "echo \"Don't you mean 'git-version-control-system'?\""
+alias gc "/usr/bin/git commit -m"
+alias ga "/usr/bin/git add"
+alias gap "ga -p"
+alias gaa "ga ."
+alias gac "gaa&&gc"
+alias gs "/usr/bin/git status"
+alias gd "gitdiff"
+alias gds "gd --staged"
+alias git-version-control-system /usr/bin/git
 function instantiate_project
    ~/Templates/instantiate_project $argv[1..-1] && cd $argv[2]
 end
