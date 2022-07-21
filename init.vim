@@ -15,6 +15,8 @@ set noswapfile
 set undofile
 set undodir=~/.vim/undodir
 
+set ignorecase
+set smartcase
 set incsearch
 set termguicolors
 set scrolloff=10
@@ -98,11 +100,12 @@ cnoreabbrev <expr> hel getcmdtype() == ":" && getcmdline() == 'hel' ? 'tab help'
 cnoreabbrev <expr> help getcmdtype() == ":" && getcmdline() == 'help' ? 'tab help' : 'help'
 
 " Search for selection
-vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>N
+vnoremap <silent> // y:let @/='<C-R>=escape(@",'/\')<CR>'<CR>:set hlsearch<CR>
 
-" Control D + d to change current word
-nmap <C-d>d lbve//epcgn
-nmap <C-d><C-d> lbve//epcgn
+" Control D to select current word
+nmap <C-d> viw//gv
+vmap <silent> <C-d> //gv
+nnoremap <silent> <CR> :noh<CR>
 
 " Keybinding to insert a single character
 nmap <silent> <Space> "=nr2char(getchar())<cr>P
