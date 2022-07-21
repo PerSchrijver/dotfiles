@@ -15,4 +15,5 @@
     ~/.config/rofi: rofi
     ~/.config/polybar: polybar
     ~/.config/starship.toml: starship.toml
+    ~/.tmux.conf: tmux.conf
 - shell: []
