@@ -1,0 +1,107 @@
+# Starship config
+
+format = """$directory$character"""
+right_format = """$all"""
+add_newline = false
+
+[username]
+format = "[$user]($style) in "
+style_user = "cyan"
+
+[line_break]
+disabled = true
+
+[time]
+disabled = false
+style = "green"
+
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[git_branch]
+symbol = " "
+style = "cyan"
+format = "[\\($symbol[$branch](none)(:$remote_branch)\\)]($style) "
+
+[golang]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+detect_folders = []
+
+[package]
+symbol = " "
+
+[python]
+symbol = " "
+style = "yellow"
+version_format = "py$raw"
+# Don't display the symbol
+format = '[${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+
+[spack]
+symbol = "🅢 "
+
+[rust]
+symbol = " "
+
+
+[character]
+success_symbol = "[\\$](green)"
+error_symbol = "[\\$](red)"
+
+[directory]
+read_only = ""
+repo_root_format = "[$before_root_path]($style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style)"
+style = "blue"
+home_symbol = "home"
+format = "[$path]($style)[$read_only]($read_only_style)"
+
+[git_status]
+disabled = true
+
+[cmd_duration]
+show_milliseconds = true

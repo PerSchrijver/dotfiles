@@ -14,4 +14,5 @@
     ~/.config/picom/picom.conf: picom.conf
     ~/.config/rofi: rofi
     ~/.config/polybar: polybar
+    ~/.config/starship.toml: starship.toml
 - shell: []
