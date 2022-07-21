@@ -60,20 +60,23 @@ lua require('telescope').load_extension('projects')
 " Sneak plugin
 let g:sneak#label = 1
 
-colorscheme gruvbox
-let g:mapleader = " "
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-
-nnoremap <c-t> :nerdtreetoggle<cr>
-nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
-inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
-" noremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<C-x>\<C-u>\<C-p>"
-map <F8> :TagbarToggle<CR>
-
+" NERDTree plugin
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
 let g:NERDTreeShowHidden=1
+
+" Colorscheme
+colorscheme gruvbox
+
+" Set leader key
+let g:mapleader = " "
+
+" Telescope keybindings
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+
+" NERDTree keybindings
+nnoremap <c-t> :NERDTreeToggle<cr>
 
 " Switch tab
 nmap <S-Tab> :tabprev<Return>
