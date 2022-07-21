@@ -79,8 +79,8 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <c-t> :NERDTreeToggle<cr>
 
 " Switch tab
-nmap <S-Tab> :tabprev<Return>
-nmap <Tab> :tabnext<Return>
+nmap <silent> <S-Tab> :tabprev<Return>
+nmap <silent> <Tab> :tabnext<Return>
 
 " Fast jk to escape
 imap jk <Esc>
@@ -111,13 +111,9 @@ vmap <silent> <C-d> //gv
 nnoremap <silent> <CR> :noh<CR>
 
 " Keybinding to insert a single character
-nmap <silent> <Space> "=nr2char(getchar())<cr>P
+nmap <silent> , "=nr2char(getchar())<cr>P
 
 " Remove arrow keys
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
