@@ -27,6 +27,7 @@ set -g -x STARSHIPCONFIG ~/.config/starship.toml
 set -g -x I3CONFIG ~/.config/i3/config
 set -g -x VIMCONFIG ~/.config/nvim/init.vim
 set -g -x TMUXCONFIG ~/.tmux.conf
+set -g -x SSHCONFIG ~/.ssh/config
 
 function fishconfig
     $text_editor $FISHCONFIG
@@ -46,6 +47,9 @@ end
 function tmuxconfig
     $text_editor $TMUXCONFIG
     tmux source $TMUXCONFIG
+end
+function sshconfig
+    $text_editor $SSHCONFIG
 end
 
 function fish_user_key_bindings
