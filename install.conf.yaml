@@ -17,4 +17,9 @@
     ~/.config/polybar: polybar
     ~/.config/starship.toml: starship.toml
     ~/.tmux.conf: tmux.conf
-- shell: []
+- brew:
+    - neovim
+    - starship
+- shell:
+    - command: sudo apt-get -y install tmux fish kitty
+      stderr: true
