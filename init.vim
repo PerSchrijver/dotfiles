@@ -149,3 +149,10 @@ inoremap <silent> <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <silent> <A-j> :m '>+1<CR>gv=gv
 vnoremap <silent> <A-k> :m '<-2<CR>gv=gv
 
+" Float terminal
+nnoremap <silent> <C-t> :update<CR>:FloatermToggle<CR>
+tnoremap <silent> <C-t> <Esc><C-\><C-n>:FloatermToggle<CR>
+
+" Quick repeat last terminal command. This is semi-hacky
+nmap <silent> <Leader>b <C-t><Up><CR><C-t>
+
