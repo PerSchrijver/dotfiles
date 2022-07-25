@@ -42,12 +42,8 @@ Plug 'tpope/vim-commentary' " Comment lines
 Plug 'ahmedkhalf/project.nvim'
 Plug 'preservim/nerdcommenter'
 Plug 'sheerun/vim-polyglot'
-
-" Media files telescope
-Plug 'nvim-lua/popup.nvim'
-"Plug 'nvim-lua/plenary.nvim'
-"Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-media-files.nvim'
+Plug 'sainnhe/sonokai'
+Plug 'sainnhe/everforest'
 call plug#end()
 
 " COC plugin following tutorial from https://www.chrisatmachine.com/blog/category/neovim/04-vim-coc
@@ -69,7 +65,16 @@ let g:NERDTreeDirArrowCollapsible="~"
 let g:NERDTreeShowHidden=1
 
 " Colorscheme
-colorscheme gruvbox
+if 0 || (strftime("%H") < 6 && strftime("%H") > 17)
+    colorscheme sonokai
+else
+    set background=light
+    if 0
+        colorscheme gruvbox
+    else
+        colorscheme everforest
+    endif
+endif
 
 " Set leader key
 let g:mapleader = " "
