@@ -33,7 +33,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
 Plug 'https://github.com/preservim/nerdtree' " NerdTree
 Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
-Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
+Plug 'https://github.com/neoclide/coc.nvim',{'do': 'yarn install --frozen-lockfile'} " Auto Completion
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
 Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
@@ -50,8 +50,8 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope-media-files.nvim'
 call plug#end()
 
-"lua require'telescope'.setup { filetypes = {"png", "webp", "jpg", "jpeg"}, find_cmd = "rg" }
-lua require('telescope').load_extension('media_files')
+" COC plugin following tutorial from https://www.chrisatmachine.com/blog/category/neovim/04-vim-coc
+source $HOME/.config/nvim/plug-config/coc.vim
 
 " NERDCommenter plugin
 filetype plugin on
