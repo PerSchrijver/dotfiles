@@ -2,6 +2,9 @@
     link:
       create: true
       relink: true
+    install-brew:
+      stderr: true,
+      stdout: true,
 - clean: []
 - link:
     ~/.config/nvim/init.vim: init.vim
