@@ -44,6 +44,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'sheerun/vim-polyglot'
 Plug 'sainnhe/sonokai'
 Plug 'sainnhe/everforest'
+Plug 'chiel92/vim-autoformat'
 call plug#end()
 
 " COC plugin following tutorial from https://www.chrisatmachine.com/blog/category/neovim/04-vim-coc
@@ -58,6 +59,15 @@ lua require('telescope').load_extension('projects')
 
 " Sneak plugin
 let g:sneak#label = 1
+
+" Autoformat plugin
+let g:formatdef_my_custom_py = '"black --line-length 120 -"'
+"let g:formatdef_my_custom_py = '"python3 /home/per/Documents/personal-coding/pygamelib/examples/main.py %"" '
+let g:formatters_python = ['my_custom_py']
+augroup format_on_save
+    autocmd!
+    autocmd! BufWrite *.py :Autoformat
+augroup END
 
 " NERDTree plugin
 let g:NERDTreeDirArrowExpandable="+"
