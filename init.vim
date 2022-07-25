@@ -93,9 +93,11 @@ let g:mapleader = " "
 " Telescope keybindings
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fo <cmd>Telescope oldfiles<cr>
+nnoremap <leader>fc <cmd>Telescope git_commits<cr>
 
 " NERDTree keybindings
-nnoremap <c-t> :NERDTreeToggle<cr>
+nnoremap <leader>n :NERDTreeToggle<cr>
 
 " Switch tab
 nmap <silent> <S-Tab> :tabprev<Return>
@@ -122,7 +124,7 @@ cnoreabbrev <expr> hel getcmdtype() == ":" && getcmdline() == 'hel' ? 'tab help'
 cnoreabbrev <expr> help getcmdtype() == ":" && getcmdline() == 'help' ? 'tab help' : 'help'
 
 " Search for selection
-vnoremap <silent> // y:let @/='<C-R>=escape(@",'/\')<CR>'<CR>:set hlsearch<CR>
+vnoremap <silent> // y:let @/='<C-R>=escape(@",'/\[]')<CR>'<CR>:set hlsearch<CR>
 
 " Control D to select current word
 nmap <C-d> viw//gv
@@ -150,10 +152,22 @@ inoremap <silent> <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <silent> <A-j> :m '>+1<CR>gv=gv
 vnoremap <silent> <A-k> :m '<-2<CR>gv=gv
 
+" VimRC keybind
+nnoremap <Leader>, :tabe $VIMCONFIG<CR>G
+
 " Float terminal
 nnoremap <silent> <C-t> :update<CR>:FloatermToggle<CR>
 tnoremap <silent> <C-t> <Esc><C-\><C-n>:FloatermToggle<CR>
 
+" Quick close
+nnoremap <Leader>q :q<CR>
+
+" Catch control space which the terminal interprets as C-@
+inoremap <C-Space> <Nop>
+
 " Quick repeat last terminal command. This is semi-hacky
 nmap <silent> <Leader>b <C-t><Up><CR><C-t>
+
+" Paste while in insert mode
+imap <silent> <C-p> <Esc>Pi
 
