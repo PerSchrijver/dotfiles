@@ -5,6 +5,7 @@
 - clean: []
 - link:
     ~/.config/nvim/init.vim: init.vim
+    ~/.config/nvim/plug-config: plug-config
     ~/.config/kitty: kitty
     ~/.scripts: scripts
     ~/.config/fish/config.fish: fish/config.fish
