@@ -42,6 +42,7 @@ Plug 'tpope/vim-commentary' " Comment lines
 Plug 'ahmedkhalf/project.nvim'
 Plug 'preservim/nerdcommenter'
 Plug 'sheerun/vim-polyglot'
+Plug 'voldikss/vim-floaterm'
 Plug 'sainnhe/sonokai'
 Plug 'sainnhe/everforest'
 Plug 'chiel92/vim-autoformat'
