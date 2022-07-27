@@ -188,8 +188,8 @@ nnoremap <Leader>q :q<CR>
 " Catch control space which the terminal interprets as C-@
 inoremap <C-Space> <Nop>
 
-" Quick repeat last terminal command. This is semi-hacky
-nmap <silent> <Leader>b :update<CR>:FloatermNew --wintype=split --autoclose=0 ./%<CR>
+" Run current file in bottom-split temporary terminal
+nmap <silent> <Leader>b :update<CR>:FloatermNew --wintype=split --autoclose=0 fish -c "$(realpath %)"<CR>
 
 " Paste while in insert mode
 imap <silent> <C-p> <Esc>Pi
