@@ -188,7 +188,7 @@ nnoremap <Leader>q :q<CR>
 inoremap <C-Space> <Nop>
 
 " Quick repeat last terminal command. This is semi-hacky
-nmap <silent> <Leader>b <C-t><Up><CR><C-t>
+nmap <silent> <Leader>b :update<CR>:FloatermNew --wintype=split --autoclose=0 ./%<CR>
 
 " Paste while in insert mode
 imap <silent> <C-p> <Esc>Pi
