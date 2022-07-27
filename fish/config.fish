@@ -1,5 +1,9 @@
 # Fish config
 
+export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/per/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
+export PATH="/home/per/.nimble/bin:$PATH"
+export PATH="/home/per/.cargo/bin:$PATH"
+
 function fish_greeting # INTERACTIVE ONLY CONFIGURATION
     # Text editor
     set -g -x TEXT_EDITOR vim
