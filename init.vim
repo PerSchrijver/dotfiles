@@ -137,7 +137,7 @@ inoremap <silent> <C-S>         <C-O>:update<CR>
 " Auto reload vimrc on save
 augroup reload_vimrc
     autocmd!
-    autocmd! BufWritePost $MYVIMRC nested source %
+    autocmd! BufWritePost */dotfiles/init.vim nested source %
 augroup END
 
 " Make help open in new tab
