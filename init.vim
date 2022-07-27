@@ -141,8 +141,8 @@ noremap <Left> <Nop>
 noremap <Right> <Nop>
 
 " Quickly insert an empty new line without entering insert mode
-nnoremap <Leader>o o<Esc>
-nnoremap <Leader>O O<Esc>
+nnoremap <Leader>o mao<Esc>`a
+nnoremap <Leader>O maO<Esc>`a
 
 " Alt keys to move lines
 nnoremap <silent> <A-j> :m .+1<CR>==
