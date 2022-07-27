@@ -16,17 +16,15 @@ function fish_greeting # INTERACTIVE ONLY CONFIGURATION
 
     # Git aliases
     alias gitdiff "ydiff -s -w0"
-    alias git "echo \"Don't you mean 'git-version-control-system'?\""
-    alias gc "/usr/bin/git commit -m"
-    alias ga "/usr/bin/git add"
+    alias gc "git commit -m"
+    alias ga "git add"
     alias gap "ga -p"
     alias gaa "ga ."
     alias gac "gaa&&gc"
-    alias gs "/usr/bin/git status"
+    alias gs "git status"
     alias gd "gitdiff"
     alias gds "gd --staged"
-    alias gcc "/usr/bin/git clone"
-    alias git-version-control-system /usr/bin/git
+    alias gcc "git clone"
 
     # Config locations
     set -g -x FISHCONFIG ~/.config/fish/config.fish
