@@ -46,6 +46,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'sainnhe/sonokai'
 Plug 'sainnhe/everforest'
 Plug 'chiel92/vim-autoformat'
+Plug 'alaviss/nim.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 call plug#end()
 
