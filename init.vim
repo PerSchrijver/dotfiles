@@ -46,6 +46,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'sainnhe/sonokai'
 Plug 'sainnhe/everforest'
 Plug 'chiel92/vim-autoformat'
+Plug 'lewis6991/gitsigns.nvim'
 call plug#end()
 
 " COC plugin following tutorial from https://www.chrisatmachine.com/blog/category/neovim/04-vim-coc
@@ -53,6 +54,19 @@ source $HOME/.config/nvim/plug-config/coc.vim
 
 " NERDCommenter plugin
 filetype plugin on
+
+" Gitsigns plugin
+lua << EOF
+require('gitsigns').setup {
+    signs = {
+        add          = {hl = 'GitSignsAdd'   , text = '+', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
+        change       = {hl = 'GitSignsChange', text = '+', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
+        delete       = {hl = 'GitSignsDelete', text = '_', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
+        topdelete    = {hl = 'GitSignsDelete', text = '‾', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
+        changedelete = {hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
+    }
+}
+EOF
 
 " Project plugin
 lua require("project_nvim").setup {}
@@ -178,4 +192,12 @@ nmap <silent> <Leader>b <C-t><Up><CR><C-t>
 
 " Paste while in insert mode
 imap <silent> <C-p> <Esc>Pi
+
+" Git keybinds
+nnoremap <Leader>vYYY :Gitsigns XXX<CR>
+nnoremap <Leader>vsh :Gitsigns stage_hunk<CR>
+nnoremap <Leader>vuh :Gitsigns undo_stage_hunk<CR>
+nnoremap <Leader>vph :Gitsigns preview_hunk<CR>
+nnoremap <Leader>vtd :Gitsigns toggle_word_diff<CR>
+nnoremap <Leader>vc :!git commit -m "
 
