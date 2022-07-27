@@ -86,6 +86,14 @@ else
         colorscheme everforest
     endif
 endif
+" Make background transparent for Windows terminal
+if $TERM == "xterm-256color"
+    set background=dark
+    colorscheme sonokai
+    hi Normal guibg=NONE ctermbg=NONE
+    hi EndOfBuffer guibg=NONE ctermbg=NONE
+    hi NonText guibg=NONE ctermbg=NONE
+endif
 
 " Set leader key
 let g:mapleader = " "
