@@ -24,6 +24,8 @@
 - brew:
     - neovim
     - starship
+    - exa
 - shell:
-    - command: sudo apt-get -y install tmux fish kitty
+    - command: sudo apt-get -y install tmux fish kitty nodejs bat
       stderr: true
+      stdout: true
