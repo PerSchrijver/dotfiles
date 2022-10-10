@@ -7,7 +7,7 @@ export PATH="/home/per/.cargo/bin:$PATH"
 function fish_greeting # INTERACTIVE ONLY CONFIGURATION
     # Text editor
     set -g -x TEXT_EDITOR vim
-    alias vim "nvim -c \"normal Mzt\""
+    alias vim "nvim -c \"normal M\""
 
     # Premium shit
     starship init fish | source
@@ -17,6 +17,8 @@ function fish_greeting # INTERACTIVE ONLY CONFIGURATION
     alias diff "diff --color --side-by-side"
     alias bat batcat
     alias p instantiate_project
+    alias dus "show_sorted_filesizes"
+    alias tree "tree -C"
 
     # Git aliases
     alias gitdiff "ydiff -s -w0"
@@ -44,6 +46,13 @@ function fish_greeting # INTERACTIVE ONLY CONFIGURATION
     end
     function nautilushere
         nautilus . >/dev/null 2>/dev/null &
+    end
+    function show_sorted_filesizes --argument-names 'filename'
+        if test -n "$filename"
+            ls -d $filename/* | xargs du -csh | sort -h
+        else
+            du -csh * | sort -h
+        end
     end
     function fishconfig
         $TEXT_EDITOR $FISHCONFIG
