@@ -13,6 +13,8 @@ if uname -r | grep microsoft-standard-WSL > /dev/null
 end
 
 function fish_greeting # INTERACTIVE ONLY CONFIGURATION
+    # Temporary configs
+
     # Text editor
     set -g -x TEXT_EDITOR vim
     alias vim "nvim -c \"normal M\""
