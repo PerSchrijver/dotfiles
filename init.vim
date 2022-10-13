@@ -91,7 +91,7 @@ let g:NERDTreeDirArrowCollapsible="~"
 let g:NERDTreeShowHidden=1
 
 " Colorscheme
-if 0 || (strftime("%H") < 6 && strftime("%H") > 17)
+if 0 || (strftime("%H") < 6 || strftime("%H") > 17)
     colorscheme sonokai
 else
     set background=light
