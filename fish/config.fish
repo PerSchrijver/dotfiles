@@ -23,7 +23,7 @@ function fish_greeting # INTERACTIVE ONLY CONFIGURATION
     alias ll "exa -l -g --icons"
     alias lla "ll -a"
     alias diff "diff --color --side-by-side"
-    alias bat batcat
+    alias bat "batcat --paging=never"
     alias p instantiate_project
     alias dus "show_sorted_filesizes"
     alias tree "tree -C"
