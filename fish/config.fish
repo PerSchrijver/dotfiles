@@ -4,6 +4,14 @@ export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/hom
 export PATH="/home/per/.nimble/bin:$PATH"
 export PATH="/home/per/.cargo/bin:$PATH"
 
+## WSL specific
+if uname -r | grep microsoft-standard-WSL > /dev/null
+  export PATH="/mnt/c/Users/persc/AppData/Local/Programs/Microsoft VS Code/bin:$PATH"
+
+  export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
+  export LIBGL_ALWAYS_INDIRECT=0
+end
+
 function fish_greeting # INTERACTIVE ONLY CONFIGURATION
     # Text editor
     set -g -x TEXT_EDITOR vim
