@@ -1,0 +1,8 @@
+Host perschrijver.nl
+  HostName perschrijver.nl
+  User u20907p15778
+  Port 7685
+
+Host delft
+  HostName student-linux.tudelft.nl
+  User pschrijver
