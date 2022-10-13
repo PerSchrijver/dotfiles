@@ -19,6 +19,7 @@
     ~/.config/polybar: polybar
     ~/.config/starship.toml: starship.toml
     ~/.tmux.conf: tmux.conf
+    ~/.ssh/config: ssh_config
 - install-brew: true
 - brew:
     - neovim
