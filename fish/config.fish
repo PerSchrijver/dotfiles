@@ -55,7 +55,11 @@ function fish_greeting # INTERACTIVE ONLY CONFIGURATION
        ~/Templates/instantiate_project $argv[1..-1] && cd $argv[2]
     end
     function nautilushere
-        nautilus . >/dev/null 2>/dev/null &
+        if uname -r | grep microsoft-standard-WSL > /dev/null
+            /mnt/c/Windows/explorer.exe .
+        else
+            nautilus . >/dev/null 2>/dev/null &
+        end
     end
     function show_sorted_filesizes --argument-names 'filename'
         if test -n "$filename"
