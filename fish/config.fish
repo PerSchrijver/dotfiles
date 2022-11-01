@@ -77,6 +77,13 @@ function fish_greeting # INTERACTIVE ONLY CONFIGURATION
             du -csh * | sort -h
         end
     end
+    function codez --argument-names 'zpath'
+        if test -n "$zpath"
+            z $zpath
+        end
+        code .
+        exit
+    end
     function fishconfig
         $TEXT_EDITOR $FISHCONFIG
         source $FISHCONFIG
