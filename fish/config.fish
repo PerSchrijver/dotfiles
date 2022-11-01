@@ -80,6 +80,7 @@ function fish_greeting # INTERACTIVE ONLY CONFIGURATION
     function fishconfig
         $TEXT_EDITOR $FISHCONFIG
         source $FISHCONFIG
+        fish_greeting >/dev/null
     end
     function starshipconfig
         $TEXT_EDITOR $STARSHIPCONFIG
