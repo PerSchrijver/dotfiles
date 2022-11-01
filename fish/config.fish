@@ -29,6 +29,7 @@ function fish_greeting # INTERACTIVE ONLY CONFIGURATION
     alias p instantiate_project
     alias dus "show_sorted_filesizes"
     alias tree "tree -C"
+    alias e "explorer"
 
     # Git aliases
     alias gitdiff "ydiff -s -w0"
@@ -54,13 +55,21 @@ function fish_greeting # INTERACTIVE ONLY CONFIGURATION
     function instantiate_project
        ~/Templates/instantiate_project $argv[1..-1] && cd $argv[2]
     end
-    function nautilushere
-        if uname -r | grep microsoft-standard-WSL > /dev/null
-            /mnt/c/Windows/explorer.exe .
+    function explorer --argument-names 'path'
+        # Default for path is current directory
+        if test -n "$path"
         else
-            nautilus . >/dev/null 2>/dev/null &
+            set path "."
+        end
+
+        # Switch between nautilus and windows explorer
+        if uname -r | grep microsoft-standard-WSL > /dev/null
+            /mnt/c/Windows/explorer.exe (wslpath -w $path)
+        else
+            nautilus $path >/dev/null 2>/dev/null &
         end
     end
+
     function show_sorted_filesizes --argument-names 'filename'
         if test -n "$filename"
             ls -d $filename/* | xargs du -csh | sort -h
