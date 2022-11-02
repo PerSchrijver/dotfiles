@@ -55,6 +55,9 @@ function fish_greeting # INTERACTIVE ONLY CONFIGURATION
     function instantiate_project
        ~/Templates/instantiate_project $argv[1..-1] && cd $argv[2]
     end
+    function temp
+        cd (mktemp -d)
+    end
     function explorer --argument-names 'path'
         # Default for path is current directory
         if test -n "$path"
