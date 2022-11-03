@@ -107,6 +107,19 @@ function fish_greeting # INTERACTIVE ONLY CONFIGURATION
     function sshconfig
         $TEXT_EDITOR $SSHCONFIG
     end
+    # When launching a program and exiting the terminal in a single command
+    # the WSL_INTEROP becomes invalid. This function fixes it again.
+    # Also, it does not work...
+    function fix_wsl2_interop
+        for i in $(pstree -np -s $fish_pid | grep -o -E '[0-9]+')
+            echo "Trying pid: $i"
+            if test -e "/run/WSL/{$i}_interop"
+                export WSL_INTEROP=/run/WSL/{$i}_interop
+            end
+        end
+    end
+    # We also call it immediately as we might be in such a situation.
+    #fix_wsl2_interop
 
     # Fish keybinds
     function fish_user_key_bindings
