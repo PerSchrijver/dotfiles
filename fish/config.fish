@@ -30,6 +30,7 @@ function fish_greeting # INTERACTIVE ONLY CONFIGURATION
     alias dus "show_sorted_filesizes"
     alias tree "tree -C"
     alias e "explorer"
+    alias tpy "temporary_executable_python_file"
 
     # Git aliases
     alias gitdiff "ydiff -s -w0"
@@ -54,6 +55,13 @@ function fish_greeting # INTERACTIVE ONLY CONFIGURATION
     # Custom functions
     function instantiate_project
        ~/Templates/instantiate_project $argv[1..-1] && cd $argv[2]
+    end
+    function temporary_executable_python_file
+        temp
+        set path (mktemp -p .)
+        chmod +x $path
+        echo "#!/usr/bin/python" > $path
+        vim $path
     end
     function temp
         cd (mktemp -d)
