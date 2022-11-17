@@ -83,9 +83,9 @@ function fish_greeting # INTERACTIVE ONLY CONFIGURATION
 
     function show_sorted_filesizes --argument-names 'filename'
         if test -n "$filename"
-            ls -d $filename/* | xargs du -csh | sort -h
+            ls -a $filename | awk -v p=$filename '!/^\.\.?$/{ print p"/"$0}' - | xargs du -csh | sort -h
         else
-            du -csh * | sort -h
+            ls -a . | awk '!/^\.\.?$/' - | xargs du -csh | sort -h
         end
     end
     function codez --argument-names 'zpath'
