@@ -203,3 +203,6 @@ nnoremap <Leader>vph :Gitsigns preview_hunk<CR>
 nnoremap <Leader>vtd :Gitsigns toggle_word_diff<CR>
 nnoremap <Leader>vc :!git commit -m "
 
+" Coc completion keybind
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
