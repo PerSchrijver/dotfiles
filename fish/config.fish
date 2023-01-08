@@ -51,6 +51,7 @@ function fish_greeting # INTERACTIVE ONLY CONFIGURATION
     set -g -x VIMCONFIG ~/.config/nvim/init.vim
     set -g -x TMUXCONFIG ~/.tmux.conf
     set -g -x SSHCONFIG ~/.ssh/config
+    set -g -x DOTFILESCONFIG ~/src/dotfiles/install.conf.yaml
 
     # Custom functions
     function instantiate_project
@@ -120,6 +121,10 @@ function fish_greeting # INTERACTIVE ONLY CONFIGURATION
     end
     function sshconfig
         $TEXT_EDITOR $SSHCONFIG
+    end
+    function dotfilesconfig
+        $TEXT_EDITOR $DOTFILESCONFIG
+        ~/src/dotfiles/install
     end
 
     # Fish keybinds
