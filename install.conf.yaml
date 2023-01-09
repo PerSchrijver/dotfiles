@@ -21,6 +21,7 @@
     ~/.tmux.conf: tmux.conf
     ~/.ssh/config: ssh_config
     ~/.config/Code/User/tasks.json: vscode-tasks.json
+    ~/.config/Code/User/keybindings.json: vscode-keybindings.json
 - install-brew: true
 - brew:
     - neovim
