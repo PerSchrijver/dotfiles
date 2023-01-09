@@ -124,7 +124,7 @@ function fish_greeting # INTERACTIVE ONLY CONFIGURATION
     end
     function dotfilesconfig
         $TEXT_EDITOR $DOTFILESCONFIG
-        ~/src/dotfiles/install
+        fish -c "cd ~/src/dotfiles/; ./install"
     end
 
     # Fish keybinds
