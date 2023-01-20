@@ -110,7 +110,7 @@ function fish_greeting # INTERACTIVE ONLY CONFIGURATION
         starship init fish | source
     end
     function i3config
-        $TEXT_EDITOR $STARSHIPCONFIG
+        $TEXT_EDITOR $I3CONFIG
         i3-msg reload > /dev/null
     end
     function vimconfig
