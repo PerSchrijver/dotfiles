@@ -31,6 +31,7 @@ function fish_greeting # INTERACTIVE ONLY CONFIGURATION
     alias tree "tree -C"
     alias e "explorer"
     alias tempexec "temporary_executable_file"
+    alias dot "z dotfiles"
 
     # Git aliases
     alias gitdiff "ydiff -s -w0"
