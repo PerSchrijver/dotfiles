@@ -185,6 +185,7 @@ tnoremap <silent> <C-t> <Esc><C-\><C-n>:FloatermToggle<CR>
 
 " Quick close
 nnoremap <Leader>q :q<CR>
+nnoremap <Leader>Q :qa<CR>
 
 " Catch control space which the terminal interprets as C-@
 inoremap <C-Space> <Nop>
