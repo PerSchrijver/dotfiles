@@ -26,7 +26,6 @@ function fish_greeting # INTERACTIVE ONLY CONFIGURATION
     alias lla "ll -a"
     alias diff "diff --color --side-by-side"
     alias bat "batcat --paging=never"
-    alias p instantiate_project
     alias dus "show_sorted_filesizes"
     alias tree "tree -C"
     alias e "explorer"
@@ -44,6 +43,7 @@ function fish_greeting # INTERACTIVE ONLY CONFIGURATION
     alias gd "gitdiff"
     alias gds "gd --staged"
     alias gcc "git clone"
+    alias gundocommit "git reset --soft HEAD~1"
 
     # Config locations
     set -g -x FISHCONFIG ~/.config/fish/config.fish
@@ -55,9 +55,6 @@ function fish_greeting # INTERACTIVE ONLY CONFIGURATION
     set -g -x DOTFILESCONFIG ~/src/dotfiles/install.conf.yaml
 
     # Custom functions
-    function instantiate_project
-       ~/Templates/instantiate_project $argv[1..-1] && cd $argv[2]
-    end
     function temporary_executable_file --argument-names "path"
         temp
         echo "#!/usr/bin/" > $path
@@ -70,6 +67,11 @@ function fish_greeting # INTERACTIVE ONLY CONFIGURATION
     end
     function temp
         cd (mktemp -d)
+    end
+    function zz
+        set z_path $argv[1]
+        set --erase argv[1]
+        fish -c "fish_greeting && z $z_path && $argv"
     end
     function explorer --argument-names 'path'
         # Default for path is current directory
