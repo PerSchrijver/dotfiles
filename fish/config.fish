@@ -42,7 +42,6 @@ function fish_greeting # INTERACTIVE ONLY CONFIGURATION
     alias gs "git status"
     alias gd "gitdiff"
     alias gds "gd --staged"
-    alias gcc "git clone"
     alias gundocommit "git reset --soft HEAD~1"
 
     # Config locations
