@@ -31,6 +31,7 @@ function fish_greeting # INTERACTIVE ONLY CONFIGURATION
     alias e "explorer"
     alias tempexec "temporary_executable_file"
     alias dot "z dotfiles"
+    alias supergrep "grep -nRH"
 
     # Git aliases
     alias gitdiff "ydiff -s -w0"
@@ -89,10 +90,10 @@ function fish_greeting # INTERACTIVE ONLY CONFIGURATION
 
     function show_sorted_filesizes --argument-names 'filename'
         if test -n "$filename"
-            ls -a $filename | awk -v p=$filename '!/^\.\.?$/{ print p"/"$0}' - | xargs du -csh | sort -h
         else
-            ls -a . | awk '!/^\.\.?$/' - | xargs du -csh | sort -h
+            set filename "."
         end
+        python3 -c "from pathlib import Path;import os,sys; os.system('du -csh ' + ' '.join('\"'+str(x)+'\"' for x in Path(sys.argv[1]).glob('*') if str(x) not in ['.', '..']))" $filename | sort -h
     end
     function codez --argument-names 'zpath'
         if test -n "$zpath"
