@@ -118,5 +118,13 @@
   {
     "key": "ctrl+g",
     "command": "-workbench.action.gotoLine"
+  },
+  {
+    "key": "ctrl+shift+[",
+    "command": "workbench.action.terminal.resizePaneUp"
+  },
+  {
+    "key": "ctrl+shift+]",
+    "command": "workbench.action.terminal.resizePaneDown"
   }
 ]
